@@ -4,4 +4,4 @@ author = "Your Name"
 copyright = "Your Name"
 paginate = 10
 languageCode = "en"
-theme = "ananke"
+theme = "hugo-coder"
