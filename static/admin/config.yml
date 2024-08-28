@@ -1,0 +1,55 @@
+backend:
+  name: github
+  repo: premkumar-meta/static-sites
+  branch: main
+  base_url: https://api.staging.proptoll.com 
+  # base_url: http://localhost:8080
+  auth_endpoint: /api/auth
+
+display_url: https://test2.proptoll.com/
+site_url: https://test2.proptoll.com/
+logo_url: https://proptoll.com/assets/img/icon.png
+
+# site_url: http://localhost:1313/
+# display_url: http://localhost:1313/
+
+
+#npx netlify-cms-proxy-server
+local_backend: true  # Specifies that the backend is local
+# site_url: http://localhost:8081 # Specifies the site URL for the local backend
+
+
+media_folder: "static/images"
+public_folder: "/images"
+
+editor:
+  preview: true
+
+collections:
+- name: "blog" # Used in routes, e.g., /admin/collections/blog
+  label: "Blog" # Used in the UI
+  folder: "content/post" # The path to the folder where the documents are stored
+  create: true # Allow users to create new documents in this collection
+  slug: "chapter-{{year}}" # Filename template, e.g., YYYY-MM-DD-title.md
+  fields: # The fields for each document, usually in front matter
+    - { label: "Chapter Number", name: "slug", widget: "string", hint: "Enter the chapter number, e.g., chapter-1, chapter-2, etc." }
+    - { label: "Publish Date", name: "date", widget: "datetime" }
+    - { label: "Description", name: "description", widget: "string" }
+    - { label: "Featured Image", name: "featured_image", widget: "image" }
+    - { label: "tags", name: "tags", widget: "list" }
+    - { label: "Title", name: "title", widget: "string" }
+    - { label: "Body", name: "body", widget: "markdown" }
+
+- name: "pages"
+  label: "Pages"
+  folder: "content"
+  create: true
+  slug: "{{slug}}"
+  fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Featured Image", name: "featured_image", widget: "image", required: false }
+      - { label: "Omit Header Text", name: "omit_header_text", widget: "boolean", default: false }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Type", name: "type", widget: "hidden", default: "page" }
+      - { label: "Menu", name: "menu", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
