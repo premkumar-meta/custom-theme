@@ -47,9 +47,8 @@ collections:
   slug: "{{slug}}"
   fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Featured Image", name: "featured_image", widget: "image", required: false }
-      - { label: "Omit Header Text", name: "omit_header_text", widget: "boolean", default: false }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Type", name: "type", widget: "hidden", default: "page" }
-      - { label: "Menu", name: "menu", widget: "string", required: false }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Aliases", name: "aliases", widget: "list", field: { label: "Alias", name: "alias", widget: "string" } }
+      - { label: "Author", name: "author", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
