@@ -1,7 +1,7 @@
 baseURL = "http://www.example.com"
-title = "johndoe"
-author = "Your Name"
-copyright = "Your Name"
+title = "proptoll"
+author = "Proptoll"
+copyright = "Proptoll"
 paginate = 5
 languageCode = "en"
 theme = "hugo-coder"
